@@ -2,9 +2,9 @@ reversingtools - x86
 ====================
 x86 Tools and Scripts - Probably don't use on OSX
 
-<strong>comp_and_dump.sh</strong> - compiles .asm files with nasm, links them with ld, dumps the bytecode with objdump, and turns it into shellcode with the '\x' character in front for quick use. Reads from shl.asm and outputs shl.o and shl (the executable you should test). Now it cleans up the shl.o file and outputs the number of bytes to stderr so you can redirect to a file without getting the byte count in there.
-<strong>packWord.pl</strong> - packs a string into hex, use the -r option for reverse (good for pushing a string to the stack for shellcode)
-<strong>doshcommandinssembly.pl</strong> - takes all arguments, converts them to hex, and uses a template to run execve("/bin/sh", ["/bin/sh", "-c", "{your args}", NULL], NULL) to call them in assembly. Outputs program as shl.asm.
+<strong>packWord.pl</strong> - packs a string into hex, use the -r option for reverse (good for pushing a string to the stack for shellcode)<br>
+<strong>doshcommandinssembly.pl</strong> - takes all arguments, converts them to hex, and uses a template to run execve("/bin/sh", ["/bin/sh", "-c", "{your args}", NULL], NULL) to call them in assembly. Outputs program as shl.asm.<br>
+<strong>comp_and_dump.sh</strong> - compiles .asm files with nasm, links them with ld, dumps the bytecode with objdump, and turns it into shellcode with the '\x' character in front for quick use. Reads from shl.asm and outputs shl.o and shl (the executable you should test). Now it cleans up the shl.o file and outputs the number of bytes to stderr so you can redirect to a file without getting the byte count in there.<br>
 I'll probably update these tools to take in a user supplied output filename (or at the very least cleanup the files after)
 
 <strong>Example:</strong> ./doshcommandinassembly.pl /bin/cat /etc/passwd && ./comp_and_dump.sh<br>
